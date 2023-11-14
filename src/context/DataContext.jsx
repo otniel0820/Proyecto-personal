@@ -6,23 +6,29 @@ export const DataContext = createContext(null);
 
 
 const arrRutinas = [];
-const collectionRutinas = await getDocs(collection(db, "Rutinas"));
-collectionRutinas.forEach((doc) => {
-  arrRutinas.push(doc.data());
-});
 const arrNutricion = [];
-const collectionNutricion = await getDocs(collection(db, "guiaNutricion"));
-collectionNutricion.forEach((doc) => {
-  arrNutricion.push(doc.data());
-});
+const getData= async ()=>{
+
+  const collectionRutinas = await getDocs(collection(db, "Rutinas"));
+  collectionRutinas.forEach((doc) => {
+    arrRutinas.push(doc.data());
+  });
+  const collectionNutricion = await getDocs(collection(db, "guiaNutricion"));
+  collectionNutricion.forEach((doc) => {
+    arrNutricion.push(doc.data());
+  });
+}
 
 export const DataContextProvider = ({ children }) => {
   const [rutinas, setRutinas] = useState();
   const [nutricion, setNutricion] = useState();
 
   useEffect(() => {
-    setNutricion(arrNutricion)
-    setRutinas(arrRutinas)
+    getData().then(data=>{
+
+      setNutricion(arrNutricion)
+      setRutinas(arrRutinas)
+    })
   }, []);
 
  console.log(nutricion)
