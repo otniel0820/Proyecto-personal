@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const TmbAndForm = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-center items-center gap-20 p-5 md:p-16 bg-[#0f1219]">
-  <div className="w-full lg:w-[60rem] flex flex-col justify-center items-center gap-5 bg-[#646671] p-5 md:p-9 shadow-lg shadow-slate-400 rounded-lg">
+    <div className="flex flex-col lg:flex-row justify-center gap-20 p-5 md:p-16 bg-[#0f1219]">
+  <div className="w-full lg:w-[60rem] flex flex-col justify-center items-center gap-10 bg-[#646671] p-5 md:p-9 shadow-lg shadow-[white] rounded-lg">
     <h1 className="text-3xl md:text-4xl lg:text-5xl text-white font-semibold">
       Tasa metabólica basal (TMB)
     </h1>
@@ -20,7 +20,8 @@ const TmbAndForm = () => {
     <Button roundness="round">Calcular mi TMB</Button>
     </Link>
   </div>
-  <div className="w-full lg:w-[30rem] mt-5 lg:mt-0">
+  <div className="w-full flex flex-col gap-4 lg:w-[30rem] mt-5 lg:mt-0">
+    <h2 className='text-white text-2xl text-center font-semibold'>Rellena para una asesoría gratuita</h2>
     <Form />
   </div>
 </div>

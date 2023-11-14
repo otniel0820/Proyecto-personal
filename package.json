@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^4.27.2",
+    "@clerk/localizations": "^1.26.9",
+    "@clerk/themes": "^1.7.9",
     "@tabler/icons-react": "^2.40.0",
+    "firebase": "^10.6.0",
+    "firebase-admin": "^11.11.0",
     "react": "^18.2.0",
     "react-calendar": "^4.6.1",
     "react-cva": "^1.2.0",

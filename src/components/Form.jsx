@@ -35,7 +35,7 @@ const Form = () => {
     <>
       <form
         onSubmit={onSubmit}
-        className="p-4 md:p-10 bg-[white] w-full md:w-[30rem] rounded-xl flex flex-col gap-5 shadow-lg shadow-[white] border-[#646671] border-solid border-[3px]  max-w-screen-md mx-auto "
+        className="p-4 md:p-10 bg-slate-100 w-full md:w-[30rem] rounded-xl flex flex-col gap-5 shadow-lg shadow-[white]   max-w-screen-md mx-auto "
       >
         <Controller
           control={control}
@@ -179,17 +179,17 @@ const Form = () => {
             />
           <label
               htmlFor="politicas"
-              className="text-[0.9em] not-italic font-normal text-[#374151] w-full flex gap-[0.2em]"
+              className="text-[0.9em] not-italic font-normal text-[#374151] w-full flex gap-[0.3em] justify-center items-center"
             >
               Acepto las
               <Link to={"/politica_de_privacidad"}>
-                <p className="text-[0.9em] not-italic font-semibold text-[#374151]">
+                <p className="text-[0.8em] not-italic font-semibold text-[#374151]">
                   Política de Privacidad
                 </p>
               </Link>
               y los
               <Link to={"/terminos_y_condiciones"}>
-                <p className="text-[0.9em] not-italic font-semibold text-[#374151]">
+                <p className="text-[0.8em] not-italic font-semibold text-[#374151]">
                   Términos y condiciones.
                 </p>
               </Link>
@@ -202,7 +202,7 @@ const Form = () => {
             </span>
           )}
         <div>
-          <Button roundness="pill">Enviar</Button>
+          <Button intent="primary" roundness="round">Enviar</Button>
         </div>
       </form>
     </>

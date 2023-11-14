@@ -27,7 +27,7 @@ const Planes = () => {
     <div className="flex flex-col gap-10 justify-center items-center sm:flex-row">
       {arrPlanes.map((plan, i) => {
         return (
-          <div className="bg-[#212330] flex flex-col justify-center items-center py-16 px-28 rounded-xl gap-5" key={i}>
+          <div className="bg-[#1c1f27] flex flex-col justify-center items-center w-80 h-80 rounded-xl gap-5" key={i}>
             <h1 className="text-white text-3xl">{plan.type}</h1>
             <div className="flex flex-col items-center">
               <h2 className="text-white text-5xl font-bold">{plan.price} €</h2>
@@ -36,7 +36,7 @@ const Planes = () => {
             </div>
 
             <div>
-              <Button roundness="pill">
+              <Button intent="primary" roundness="round">
                 {plan.type === "ANUAL"
                   ? "Ahorra 50%"
                   : plan.type === "SEMESTRAL"

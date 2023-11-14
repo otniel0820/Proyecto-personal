@@ -7,17 +7,13 @@ import CalorieCalculator from "./page/CalorieCalculator";
 import Suscripcion from "./page/Suscripcion";
 import WhatsappBubble from "./components/WhatsappBubble";
 import ScrollToTop from "./components/ScrollToTop";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  useUser,
-  RedirectToSignIn,
-  SignIn,
-  SignUp,
-} from "@clerk/clerk-react";
-import SingPage from "./page/SingPage";
+import { ClerkProvider, SignedIn } from "@clerk/clerk-react";
+import { neobrutalism } from "@clerk/themes";
+import { esES } from "@clerk/localizations";
+import SingInPage from "./page/SingInPage";
+import SingUpPage from "./page/SingUpPage";
+import Rutinas from "./page/Rutinas";
+import Nutricion from "./page/Nutricion";
 
 const clerkPubKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -27,6 +23,10 @@ const ClerkProviderWithRoutes = () => {
   return (
     <div className="w-min-[350px] ">
       <ClerkProvider
+        appearance={{
+          baseTheme: neobrutalism,
+        }}
+        localization={esES}
         publishableKey={clerkPubKey}
         navigate={(to) => navigate(to)}
       >
@@ -34,24 +34,20 @@ const ClerkProviderWithRoutes = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<Landing />}></Route>
-          <Route path="/inicio_sesión" element={<SingPage path="/sign-in" />} />
-          <Route
-            path="/registro_usuario"
-            element={<SignUp path="/sign-up" />}
-          />
+          <Route path="/inicio_sesión" element={<SingInPage />} />
+          <Route path="/registro_usuario" element={<SingUpPage />} />
+
           <Route
             element={
               <>
                 <SignedIn>
-                <Route path="/sign-in" element={<Landing />}></Route>
+                  <Route path="/sign-in" element={<Landing />}></Route>
                 </SignedIn>
-                <SignedOut>
-                <Route path="/" element={<Landing />}></Route>
-                </SignedOut>
-                
               </>
             }
           />
+          <Route path="/rutinas" element={<Rutinas />}></Route>
+          <Route path="/nutricion" element={<Nutricion />}></Route>
           <Route
             path="/calculadora_de_calorias_y_macros"
             element={<CalorieCalculator />}

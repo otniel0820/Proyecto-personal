@@ -11,20 +11,21 @@ import {
   MenuItem,
   FaBarIcon,
 } from "./NavBarElements";
-import { UserButton, useUser } from "@clerk/clerk-react";
+import { UserButton, useUser, } from "@clerk/clerk-react";
 
 const NavBar = () => {
   const { user } = useUser();
+  
   const [click, setClick]= useState(false)
   const handleClick = ()=>{
     setClick(!click);
   }
   return (
-    <div className="fixed w-full top-0  backdrop-blur-[5px] z-50">
+    <div className="sticky w-full top-0  backdrop-blur-[5px] z-50">
       <NavBarContainer>
         <NavWrapper>
           <IconLogo>
-            <Logo />
+            <Logo navBar={'nav'}/>
           </IconLogo>
           <FaBarIcon onClick={()=> handleClick()}>
             {click? <FaTimes/>:<FaBars/>}
@@ -44,7 +45,7 @@ const NavBar = () => {
             </MenuItem>
             <MenuItem>
             {user ? (
-                <UserButton />
+                <UserButton afterSignOutUrl="/inicio_sesión"/>
               ) : (
                 <Link to={"/inicio_sesión"} onClick={click} className="links">
                   Iniciar Sesión

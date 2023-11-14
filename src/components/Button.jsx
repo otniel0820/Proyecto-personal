@@ -5,7 +5,7 @@ import { styled } from "react-cva";
     variants: {
       intent: {
         primary: [
-          "bg-gradient-to-r from-pink-500 to-yellow-500  hover:from-green-400 hover:to-blue-500 text-white",
+          "bg-gradient-to-r from-[#1c1f27] via-red-500 to-[#1c1f27] hover:bg-gradient-to-r hover:from-red-500 hover:via-[#1c1f27] hover:to-red-500 text-white",
         ],
         secondary: [
           "bg-red-400",

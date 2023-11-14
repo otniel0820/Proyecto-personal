@@ -2,13 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import definicion from "../assets/definicion.jpg";
-import volumen from "../assets/volumen.jpg";
-import pro from "../assets/pro.jpg";
-import enCasa from "../assets/enCasa.jpg";
-import nutricion from "../assets/nutricion.jpg";
-import suplementacion from "../assets/suplementacion.jpg";
-import principiantes from "../assets/principiantes.jpg";
+
 
 export const Carousel = () => {
   const settings = {
@@ -50,75 +44,76 @@ export const Carousel = () => {
       },
     ],
   };
+
+  const carouselItems = [
+    {
+      title: "Definición",
+      image:
+        "https://img.freepik.com/fotos-premium/atleta-entrenamiento-intenso-gimnasio-accion_946657-2753.jpg",
+      description:
+        "Programa diseñado para reducir la grasa corporal y resaltar la definición muscular. Incluye entrenamiento de resistencia, ejercicio cardiovascular, dieta equilibrada con déficit calórico, control de porciones, hidratación y descanso.",
+    },
+    {
+      title: "Volumen",
+      image:
+        "https://img.freepik.com/fotos-premium/hombre-musculoso-haciendo-actividades-fisicas-gym_976142-1453.jpg",
+      description:
+        "Ideal para aquellos que buscan aumentar el tamaño muscular. Requiere un trabajo duro en el gimnasio y una dieta específica. No se trata solo de ganar peso, sino de ganar músculo magro.",
+    },
+    {
+      title: "Modo pro",
+      image:
+        "https://i.ytimg.com/vi/AXBDzATZ_UE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC4Ky9J5osHEFWsB7gyhLkvd1j8OQ",
+      description:
+        "Enfoque avanzado centrado en maximizar el rendimiento, la fuerza y la hipertrofia muscular. Requiere dedicación y comprensión profunda de la ciencia del entrenamiento. Preparación física y mental esencial.",
+    },
+    {
+      title: "Entrenamiento en casa",
+      image:
+        "https://s1.abcstatics.com/media/bienestar/2021/01/09/hacer-ejercicio-casa-k38F--620x349@abc.jpg",
+      description:
+        "Plan de entrenamiento centrado en mantener y mejorar la salud y condición física general. Ajustable según el nivel de condición física y preferencias. No se requiere equipo especial.",
+    },
+    {
+      title: "Guía de nutrición",
+      image:
+        "https://media.gettyimages.com/id/1408299962/es/v%C3%ADdeo/mujer-que-recibe-consejos-de-alimentaci%C3%B3n-saludable-del-m%C3%A9dico.jpg?s=640x640&k=20&c=FBuEAnKn3dXC4BVMlJsXV6HnNsmDLoexQpj0YnHuyP8=",
+      description:
+        "Un plan de nutrición efectivo es sostenible y a largo plazo. La personalización y adaptabilidad son fundamentales. Cada persona es única, y el enfoque debe ser único para cada individuo.",
+    },
+    {
+      title: "Guía de suplementación",
+      image:
+        "https://s2.abcstatics.com/media/familia/2019/02/26/suplementos-deportivos-3-kugH--620x349@abc.jpg",
+      description:
+        "Orientación y apoyo para una suplementación efectiva y adecuada. Los suplementos no deben reemplazar la dieta, sino complementarla según necesidades específicas. El entrenamiento adecuado y la planificación son cruciales.",
+    },
+    {
+      title: "Principiantes",
+      image:
+        "https://thumbs.dreamstime.com/b/gym-funny-man-est%C3%A1-entrenando-una-aspirante-joven-te-ense%C3%B1a-balancear-piernas-con-motivos-de-escudos-gimnasio-un-hombre-199397053.jpg?w=576",
+      description:
+        "Ideal para aquellos nuevos en el gimnasio o que regresan después de mucho tiempo. Programa diseñado para preparar y acostumbrar el cuerpo a la actividad física.",
+    },
+  ];
+
   return (
-    <div className="py-10 px-12 bg-[#646671] ">
-      <Slider {...settings}>
-        <div className="px-2">
-          <img
-            src={definicion}
-            alt=""
-            className="w-[30em] h-[25em] rounded-xl"
-          />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em]">Definición</h3>
-            <p className="text-white text-[1em] text-justify">El programa de definición en el gimnasio tiene como objetivo principal reducir la grasa corporal y destacar la definición muscular. Esto se logra mediante un programa que combina entrenamiento de resistencia para mantener la masa muscular, ejercicio cardiovascular para quemar calorías, una dieta equilibrada con un déficit calórico controlado, control de porciones, hidratación adecuada, descanso y recuperación, y una mentalidad positiva. El seguimiento del progreso y los ajustes son esenciales, y se puede considerar la inclusión de suplementos.</p>
-          </div>
+    <div className="py-10 px-12 bg-[#646671]">
+  <Slider {...settings}>
+    {carouselItems.map((item, index) => (
+      <div key={index} className="px-2 flex flex-col items-center">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover rounded-xl mb-4"
+        />
+        <div className="flex flex-col items-center gap-2">
+          <h3 className="text-white text-[1.5em]">{item.title}</h3>
+          <p className="text-white text-[1em] text-center">{item.description}</p>
         </div>
-        <div className="px-2">
-          <img src={volumen} alt="" className="w-[30em] h-[25em] rounded-xl" />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em]">Volumen</h3>
-            <p className="text-white text-[1em] text-justify">Un plan de volumen es ideal para personas que desean aumentar su tamaño muscular y están dispuestas a trabajar duro en el gimnasio y a mantener una dieta específica para lograrlo. Es importante tener en cuenta que este tipo de plan no solo se trata de ganar peso, sino de ganar músculo magro, por lo que la alimentación y el entrenamiento deben ser apropiados para dicho objetivo.</p>
-          </div>
-        </div>
-        <div className="px-2">
-          <img src={pro} alt="" className="w-[30em] h-[25em] rounded-xl" />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em]">Modo pro</h3>
-            <p className="text-white text-[1em] text-justify">Este enfoque de entrenamiento "modo pro" se centra en maximizar el rendimiento, la fuerza y la hipertrofia muscular. Es un enfoque avanzado que requiere una dedicación significativa y una comprensión profunda de la ciencia del entrenamiento. Asegúrate de estar preparado física y mentalmente para un programa de este nivel.</p>
-          </div>
-        </div>
-        <div className="px-2">
-          <img src={enCasa} alt="" className="w-[30em] h-[25em] rounded-xl" />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em]">Entrenaiento en casa</h3>
-            <p className="text-white text-[1em] text-justify">Este plan de entrenamiento en casa se enfoca en mantener y mejorar tu salud y condición física general. Puedes ajustar la intensidad según tu nivel de condición física y preferencias. No se requiere equipo especial, pero si tienes mancuernas o bandas elásticas, puedes incorporarlas para añadir resistencia. Recuerda mantener una alimentación equilibrada y beber suficiente agua para apoyar tus objetivos de acondicionamiento físico.</p>
-          </div>
-        </div>
-        <div className="px-2">
-          <img
-            src={nutricion}
-            alt=""
-            className="w-[30em] h-[25em] rounded-xl"
-          />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em] ">Guía de nutrición</h3>
-            <p className="text-white text-[1em] text-justify">Un plan de nutrición efectivo no es una dieta a corto plazo, sino un enfoque sostenible y a largo plazo para el bienestar y la salud. Es importante recordar que cada persona es única, y lo que funciona para una persona puede no ser adecuado para otra. Por lo tanto, la personalización y la adaptabilidad son fundamentales en un plan de nutrición exitoso.</p>
-          </div>
-        </div>
-        <div className="px-2">
-          <img
-            src={suplementacion}
-            alt=""
-            className="w-[30em] h-[25em] rounded-xl"
-          />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em]">Guía de suplementación</h3>
-            <p className="text-white text-[1em] text-justify">Fit Tech Pro te brinda orientación y apoyo para lograr una suplementación efectiva y adecuada. En la mayoría de los casos, una dieta equilibrada es suficiente para satisfacer las necesidades nutricionales. Los suplementos deportivos no deben reemplazarla, sino complementarla según necesidades específicas. Además, es importante entender que los suplementos no garantizan el éxito deportivo; el entrenamiento adecuado y la planificación son cruciales para obtener resultados en el rendimiento deportivo. Fit Tech Pro te ayuda y te guía en este proceso.</p>
-          </div>
-        </div>
-        <div className="px-2">
-          <img
-            src={principiantes}
-            alt=""
-            className="w-[30em] h-[25em] rounded-xl"
-          />
-          <div className="flex flex-col justify-center items-center pr-5 pt-5 gap-2 ">
-            <h3 className="text-white text-[1.5em]">Principiantes</h3>
-            <p className="text-white text-[1em] text-justify">Si eres totalmente nuevo en el gym, o estas regresando después de mucho tiempo, este programa es ideal para tu primera semana, con el fin de preparar y acostumbrar tu cuerpo a este nuevo deporte.</p>
-          </div>
-        </div>
-      </Slider>
-    </div>
+      </div>
+    ))}
+  </Slider>
+</div>
   );
 };

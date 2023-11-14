@@ -6,7 +6,7 @@ import ConceptosConocer from "../components/ConceptosConocer";
 const CalorieCalculator = () => {
   
   return (
-    <div className=" bg-[#1C1F27]">
+    <div className=" ">
       <CalculateMacrosCalories/>
       <ConceptosConocer conceptCalories={'calculadora'}/>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import MacroCaloriesModal from "./MacroCaloriesModal";
 
 const CalculateMacrosCalories = () => {
   const [gender, setGender] = useState("male");
@@ -9,6 +10,7 @@ const CalculateMacrosCalories = () => {
   const [activityLevel, setActivityLevel] = useState(1.2);
   const [goal, setGoal] = useState("maintain");
   const [result, setResult] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const activityLevels = {
     1.2: "Sedentario (poco o ningún ejercicio)",
@@ -56,20 +58,24 @@ const CalculateMacrosCalories = () => {
     const macros = calculateMacros(adjustedCalories);
 
     setResult({ maintenanceCalories, adjustedCalories, macros });
+    setShowModal(true); 
+  };
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
-    <div className=" flex flex-col gap-8 justify-center items-center bg-[#1C1F27] min-h-screen px-4 py-20 md:p-20">
-      <h1 className="text-white text-[3em]">
+    <div className=" flex flex-col gap-8 justify-center items-center  min-h-screen px-4 py-10 md:p-20 bg-cover bg-center" style={{backgroundImage:'url(https://wallpapercave.com/wp/wp2639543.jpg)'}}>
+      <h1 className="text-white text-[3em]" >
         Calculadora de Macros y Calórias Diarias
       </h1>
-      <div className='w-full md:w-[30rem] max-w-screen-md mx-auto p-4 md:p-10 rounded-xl flex flex-col gap-5 shadow-lg bg-white border-[#646671] border-solid border-3  "'>
+      <div className='w-full md:w-[30rem] max-w-screen-md mx-auto p-4 md:p-10 rounded-xl flex flex-col gap-5 shadow-xl shadow-red-500 bg-slate-200 bg-opacity-70  backdrop-blur-[10px] '>
         <div className="flex flex-col gap-2">
           <label className="text-black text-[1.5em]">Género:</label>
           <select
             onChange={(e) => setGender(e.target.value)}
             value={gender}
-            className="border-[#1c1f27] border-solid border-[3px] rounded-md p-2"
+            className="border-[#1c1f27] border-solid border-[1px] rounded-md p-2"
           >
             <option value="male">Hombre</option>
             <option value="female">Mujer</option>
@@ -81,7 +87,7 @@ const CalculateMacrosCalories = () => {
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
-            className="border-[#1c1f27] border-solid border-[3px] rounded-md p-2"
+            className="border-[#1c1f27] border-solid border-[1px] rounded-md p-2"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -90,7 +96,7 @@ const CalculateMacrosCalories = () => {
             type="number"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
-            className="border-[#1c1f27] border-solid border-[3px] rounded-md  p-2"
+            className="border-[#1c1f27] border-solid border-[1px] rounded-md  p-2"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -99,16 +105,16 @@ const CalculateMacrosCalories = () => {
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="border-[#1c1f27] border-solid border-[3px] rounded-md  p-2"
+            className="border-[#1c1f27] border-solid border-[1px] rounded-md  p-2"
           />
         </div>
-        <div></div>
+        
         <div className="flex flex-col gap-1">
           <label className="text-black text-[1.5em]">Nivel de actividad:</label>
           <select
             onChange={(e) => setActivityLevel(parseFloat(e.target.value))}
             value={activityLevel}
-            className="border-[#1c1f27] border-solid border-[3px] rounded-md p-2"
+            className="border-[#1c1f27] border-solid border-[1px] rounded-md p-2"
           >
             {Object.entries(activityLevels).map(([level, label]) => {
               return (
@@ -124,7 +130,7 @@ const CalculateMacrosCalories = () => {
           <select
             onChange={(e) => setGoal(e.target.value)}
             value={goal}
-            className="border-[#1c1f27] border-solid border-[3px] rounded-md p-2"
+            className="border-[#1c1f27] border-solid border-[1px] rounded-md p-2"
           >
             <option value="maintain">Mantener peso</option>
             <option value="loseWeight">Perder peso</option>
@@ -135,19 +141,11 @@ const CalculateMacrosCalories = () => {
 
         <Button roundness="round" onClick={()=>handleCalculate()}>Calcular</Button>
         </div>
-        {result && (
-          <div className=" sm:w-[90%] md:w-[100%] cursor-pointer shadow-lg shadow-white bg-[#0f1219] rounded-xl text-white p-4 flex flex-col gap-5">
-            <h2 className="text-white text-[1.5em]">
-              Calorias totales segun tu (TMB):
-            </h2>
-            <p>Calorías por día: {result.maintenanceCalories.toFixed(0)}</p>
-            <h2 className="text-white text-[1.2em]">
-              Distribución de macros recomendada:
-            </h2>
-            <p>Proteína: {result.macros.protein.toFixed(0)} gramos.</p>
-            <p>Carbohidratos: {result.macros.carbs.toFixed(0)} gramos.</p>
-            <p>Grasa: {result.macros.fats.toFixed(0)} gramos.</p>
-          </div>
+        {result && showModal && (
+          <MacroCaloriesModal
+            result={result}
+            closeModal={closeModal}
+          />
         )}
       </div>
     </div>

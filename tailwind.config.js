@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        dafont: ['Muscle_Cre', 'sans-serif'],
+      },
+    },
     
   },
   screens: {

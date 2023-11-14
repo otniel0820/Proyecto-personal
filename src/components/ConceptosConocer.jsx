@@ -151,21 +151,21 @@ const ConceptosConocer = ( {conceptCalories}) => {
     },
   ]
   return (
-    <div className={`flex flex-col justify-center items-center p-5 ${ conceptCalories==='calculadora'? 'bg-[#646671]':'bg-[#0f1219]'}`}>
+    <div className={`flex flex-col justify-center items-center p-20 ${ conceptCalories==='calculadora'? 'bg-[#646671]':'bg-[#0f1219]'}`}>
       <h2 className="text-center text-4xl text-white pb-10">
         CONCEPTOS A CONOCER
       </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {conceptCalories=== 'calculadora'? arrConceptCalories.map((element, i) => {
           return (
             <div
               key={i}
               className="text-white p-2 md:p-4 lg:p-2 flex justify-center items-center"
             >
-              <div className="flex flex-col gap-4 justify-center items-center text-justify">
+              <div className="flex flex-col gap-4 justify-center items-center text-center">
                 <element.icon className="text-6xl" />
                 <h1 className="text-2xl">{element.title}</h1>
-                <p className="w-[12em]">{element.text}</p>
+                <p className="w-[12em] h-[13em] flex-grow">{element.text}</p>
               </div>
             </div>
           );
@@ -173,12 +173,12 @@ const ConceptosConocer = ( {conceptCalories}) => {
           return(
             <div
               key={i}
-              className="text-white p-2 md:p-4 lg:p-5 flex justify-center items-center bg-[#646671] rounded-lg shadow-md shadow-white"
+              className="text-white p-2 md:p-4 lg:p-5 flex justify-center items-center bg-slate-800 rounded-lg shadow-md shadow-white"
             >
-              <div className="flex flex-col gap-4 justify-center items-center text-justify">
-                <img src={element.img} className="text-6xl" />
+              <div className="flex flex-col gap-4 justify-center items-center pt-5">
+                <img src={element.img} className="text-6xl " />
                 <h1 className="text-2xl">{element.title}</h1>
-                <p className="w-[12em]">{element.text}</p>
+                <p className="flex-grow w-[21em] h-[8em]">{element.text}</p>
               </div>
             </div>
           )

@@ -19,20 +19,22 @@ const objDescription = [
 
 const Descripcion = () => {
   return (
-    <div className=' p-10 flex flex-col justify-center items-center bg-[#0f1219] gap-10'>
-      {objDescription.map((element, i)=>{
-        return(
-          <div key={i} className={`flex justify-center items-center gap-20 bg-[#646671] p-8 rounded-xl shadow-lg shadow-slate-400 sm:flex-col md: flex-col lg:flex-row ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-        
-        <img src={element.url} alt="" className='w-[35em] h-[30em] rounded-lg shadow-xl'/>
-        <p className='text-[1.5em] text-white text-justify'>{element.text}</p>
-      </div>
-        )
+    <div className='p-5 md:p-10 lg:p-20 flex flex-col justify-center items-center bg-[#0f1219] gap-5 md:gap-10'>
+      {objDescription.map((element, i) => {
+        return (
+          <div key={i} className={`flex flex-col gap-10 md:flex-row lg:flex-row justify-center items-center bg-[#646671] p-5 md:p-8 lg:p-10 rounded-xl shadow-lg shadow-slate-400 ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+
+            <img src={element.url} alt="" className='w-full h-[20em] object-cover rounded-lg shadow-xl mb-5 md:w-[30em] md:h-[30em] lg:w-[30em] lg:h-[30em]' />
+            <p className='text-[1.5em] text-white text-justify'>{element.text}</p>
+          </div>
+        );
       })}
 
-      <Link to={'/suscripcion'}><Button intent='secondary' size='large' roundness='pill'>Registrate ahora</Button></Link>
+      <Link to={'/suscripcion'}>
+        <Button intent='primary' size='large' roundness='round'>Registrate ahora</Button>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Descripcion
+export default Descripcion;
