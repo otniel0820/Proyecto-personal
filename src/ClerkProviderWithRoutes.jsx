@@ -28,7 +28,7 @@ const ClerkProviderWithRoutes = () => {
         }}
         localization={esES}
         publishableKey={clerkPubKey}
-        navigate={(to) => navigate(to)}
+        // navigate={(to) => navigate(to)}
       >
         <ScrollToTop />
         <NavBar />
