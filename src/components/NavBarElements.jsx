@@ -6,7 +6,8 @@ export const NavBarContainer = styled.div`
  
   top: 0;
   z-index: 99;
-  background-color: #1C1F27;
+  background-color: rgb(28, 31, 39, 0.60) ;
+  
 `;
 
 export const NavWrapper = styled.div`

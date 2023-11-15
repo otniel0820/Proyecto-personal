@@ -7,7 +7,7 @@ const EjercicioTriceps = () => {
   const { rutinas } = useContext(DataContext);
   const [selectedExercise, setSelectedExercise] = useState(null);
 
-  const tiposEjerciciosTriceps = rutinas?.slice(6); 
+  const tiposEjerciciosTriceps = rutinas?.slice(6,7); 
 
   const handleExerciseClick = (exercise) => {
     setSelectedExercise({

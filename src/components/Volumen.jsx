@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import ModalNutricion from "./ModalNutricion";
+import volumen1 from '../assets/volumen1.png'
+import volumen2 from '../assets/volumen2.png'
 
 const Volumen = () => {
   const { nutricion } = useContext(DataContext);
@@ -10,7 +12,7 @@ const Volumen = () => {
   const [selectedComidaId, setSelectedComidaId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const dietaVolumen = nutricion?.slice(2);
+  const dietaVolumen = nutricion?.slice(2,3);
 
   const handleDayClick = (dia,comidaId) => {
     setSelectedDay(dia);
@@ -24,9 +26,9 @@ const Volumen = () => {
   };
 
   return (
-    <div className="flex flex-col   w-full py-20 px-10 gap-8  bg-white shadow-lg shadow-red-500 rounded-lg">
+    <div className="flex flex-col   w-full py-20 px-16 gap-8  bg-white shadow-lg shadow-red-500 rounded-lg">
       <h1 className="text-3xl font-bold mb-4 text-center font-dafont">Dieta para Volumen</h1>
-      <section className="flex gap-24">
+      <section className="flex gap-40 items-center">
         {dietaVolumen?.map((element, index) => {
           const diasOrdenados = Object.entries(element).sort(
             ([diaA, comidaA], [diaB, comidaB]) =>
@@ -43,6 +45,8 @@ const Volumen = () => {
             </div>
           );
         })}
+        <img src={volumen1} alt="" />
+        <img src={volumen2} alt="" />
       </section>
       {isModalOpen && (
         <ModalNutricion

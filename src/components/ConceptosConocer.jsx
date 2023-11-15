@@ -155,7 +155,7 @@ const ConceptosConocer = ( {conceptCalories}) => {
       <h2 className="text-center text-4xl text-white pb-10">
         CONCEPTOS A CONOCER
       </h2>
-      <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className=" grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {conceptCalories=== 'calculadora'? arrConceptCalories.map((element, i) => {
           return (
             <div

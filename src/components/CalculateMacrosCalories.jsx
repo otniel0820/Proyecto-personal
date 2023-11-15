@@ -65,8 +65,8 @@ const CalculateMacrosCalories = () => {
   };
 
   return (
-    <div className=" flex flex-col gap-8 justify-center items-center  min-h-screen px-4 py-10 md:p-20 bg-cover bg-center" style={{backgroundImage:'url(https://wallpapercave.com/wp/wp2639543.jpg)'}}>
-      <h1 className="text-white text-[3em]" >
+    <div className=" flex flex-col gap-8 justify-center items-center  min-h-screen px-4 py-20 md:py-20 bg-cover bg-center" style={{backgroundImage:'url(https://wallpapercave.com/wp/wp2639543.jpg)'}}>
+      <h1 className="text-white text-[3em] pt-8" >
         Calculadora de Macros y Calórias Diarias
       </h1>
       <div className='w-full md:w-[30rem] max-w-screen-md mx-auto p-4 md:p-10 rounded-xl flex flex-col gap-5 shadow-xl shadow-red-500 bg-slate-200 bg-opacity-70  backdrop-blur-[10px] '>

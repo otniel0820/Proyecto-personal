@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import ModalNutricion from "./ModalNutricion";
-import logoSinFondo from '../assets/logoSinFondo.png'
+import deficit1 from '../assets/deficit1.png'
+import deficit2 from '../assets/deficit2.png'
 
 const Deficit = () => {
   const { nutricion } = useContext(DataContext);
@@ -25,9 +26,9 @@ const Deficit = () => {
   };
 
   return (
-    <div className="flex flex-col   w-full py-20 px-10 gap-8 bg-white shadow-lg shadow-red-500 rounded-lg" >
+    <div className="flex flex-col   w-full py-20 px-16 gap-8 bg-white shadow-lg shadow-red-500 rounded-lg" >
       <h1 className="text-3xl font-bold mb-4 text-center font-dafont">Dieta para un déficit calórico</h1>
-      <section className="flex gap-24">
+      <section className="flex gap-60 items-center">
         {dietaDeficit?.map((element, index) => {
           const diasOrdenados = Object.entries(element).sort(
             ([diaA, comidaA], [diaB, comidaB]) =>
@@ -44,7 +45,8 @@ const Deficit = () => {
             </div>
           );
         })}
-        <img src="" alt="" />
+        <img src={deficit1} alt="" className=""/>
+        <img src={deficit2} alt="" className=""/>
       </section>
       {isModalOpen && (
         <ModalNutricion

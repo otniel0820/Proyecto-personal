@@ -21,7 +21,7 @@ const NavBar = () => {
     setClick(!click);
   }
   return (
-    <div className="sticky w-full top-0  backdrop-blur-[5px] z-50">
+    <div className="fixed w-full top-0  backdrop-blur-[5px] z-50">
       <NavBarContainer>
         <NavWrapper>
           <IconLogo>

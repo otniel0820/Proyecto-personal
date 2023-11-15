@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
-    <div className='bg-[#1c1f27] pt-10'>
+    <div className='bg-[#1c1f27] pt-20'>
       <div className='flex flex-col lg:flex-row justify-center items-center'>
 
         <div className='lg:w-1/2 w-full flex justify-center items-center'>

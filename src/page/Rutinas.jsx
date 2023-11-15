@@ -9,7 +9,7 @@ import EjercicioTriceps from '../components/EjercicioTriceps'
 
 const Rutinas = () => {
   return (
-    <div className='min-h-screen flex flex-col justify-center items-center bg-[#1C1F27] py-10 px-20 gap-14'>
+    <div className='min-h-screen flex flex-col justify-center items-center bg-[#1C1F27] py-24 px-20 gap-14'>
       <EjercicioBiceps/>
       <EjercicioEspalda/>
       <EjercicioHombros/>

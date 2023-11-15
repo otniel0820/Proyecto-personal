@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import ModalNutricion from "./ModalNutricion";
+import mantenimiento1 from '../assets/mantenimiento1.png'
+import mantenimiento2 from '../assets/mantenimiento2.png'
 
 const MantenerPeso = () => {
   const { nutricion } = useContext(DataContext);
@@ -26,6 +28,8 @@ const MantenerPeso = () => {
     <div className="flex flex-col   w-full py-20 px-10 gap-8  bg-white shadow-lg shadow-red-500 rounded-lg">
       <h1 className="text-3xl font-bold mb-4 text-center font-dafont">Dieta para mantenimiento</h1>
       <section className="flex gap-24">
+        <img src={mantenimiento1} alt="" />
+        <img src={mantenimiento2} alt="" />
         {dietaMantenimiento?.map((element, index) => {
           const diasOrdenados = Object.entries(element).sort(
             ([diaA, comidaA], [diaB, comidaB]) =>

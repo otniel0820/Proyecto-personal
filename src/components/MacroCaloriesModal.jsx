@@ -12,7 +12,7 @@ const MacroCaloriesModal = ({ result, closeModal }) => {
 
   return (
     <div
-      className="fixed inset-0 w-full h-full flex justify-center items-center bg-black bg-opacity-70"
+      className="fixed inset-0 w-full h-full flex justify-center items-center "
       onClick={handleCloseModal}
     >
       <div ref={modalRef} className="bg-[#1c1f27] text-white p-8 rounded-lg text-center flex flex-col gap-5">
