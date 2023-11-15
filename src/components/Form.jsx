@@ -35,7 +35,7 @@ const Form = () => {
     <>
       <form
         onSubmit={onSubmit}
-        className="p-4 md:p-10 bg-slate-100 w-full md:w-[30rem] rounded-xl flex flex-col gap-5 shadow-lg shadow-[white]   max-w-screen-md mx-auto "
+        className="p-4 md:p-10 bg-slate-100 bg-opacity-80 backdrop-blur-[5px] w-full md:w-[30rem] rounded-xl flex flex-col gap-5 shadow-lg shadow-[white]   max-w-screen-md mx-auto "
       >
         <Controller
           control={control}

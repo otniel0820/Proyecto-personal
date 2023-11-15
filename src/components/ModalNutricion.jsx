@@ -23,7 +23,7 @@ const ModalNutricion = ({ title, content, onClose }) => {
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50"></div>
       <div ref={modalRef} className="bg-[#1C1F27] text-white p-8 rounded-lg shadow-lg z-10 relative w-[30em]">
         <span
-          className="text-gray-700 text-2xl font-bold cursor-pointer absolute top-2 right-4"
+          className="text-white text-2xl font-bold cursor-pointer absolute top-2 right-4"
           onClick={onClose}
         >
           &times;

@@ -27,7 +27,7 @@ const MantenerPeso = () => {
   return (
     <div className="flex flex-col   w-full py-20 px-10 gap-8  bg-white shadow-lg shadow-red-500 rounded-lg">
       <h1 className="text-3xl font-bold mb-4 text-center font-dafont">Dieta para mantenimiento</h1>
-      <section className="flex gap-24">
+      <section className="flex gap-14">
         <img src={mantenimiento1} alt="" />
         <img src={mantenimiento2} alt="" />
         {dietaMantenimiento?.map((element, index) => {
@@ -40,7 +40,7 @@ const MantenerPeso = () => {
             <div key={index} className="flex flex-col gap-5">
               {diasOrdenados.map(([dia, comida]) => (
                 <div key={dia} className="cursor-pointer" onClick={() => handleDayClick(dia, comida.id)}>
-                  <h2 className="text-blue-500 cursor-pointer text-xl">Día: {comida.id}</h2>
+                  <h2 className="text-blue-500 cursor-pointer text-xl">Comida para el dia: {comida.id}</h2>
                 </div>
               ))}
             </div>

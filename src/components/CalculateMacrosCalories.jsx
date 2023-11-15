@@ -5,8 +5,8 @@ import MacroCaloriesModal from "./MacroCaloriesModal";
 const CalculateMacrosCalories = () => {
   const [gender, setGender] = useState("male");
   const [age, setAge] = useState(25);
-  const [height, setHeight] = useState(170); // en centímetros
-  const [weight, setWeight] = useState(70); // en kilogramos
+  const [height, setHeight] = useState(170); 
+  const [weight, setWeight] = useState(70); 
   const [activityLevel, setActivityLevel] = useState(1.2);
   const [goal, setGoal] = useState("maintain");
   const [result, setResult] = useState(null);
@@ -37,9 +37,9 @@ const CalculateMacrosCalories = () => {
     const carbRatio = 0.5;
     const fatRatio = 0.3;
 
-    const protein = (calories * proteinRatio) / 4; // 4 calorías por gramo de proteína
-    const carbs = (calories * carbRatio) / 4; // 4 calorías por gramo de carbohidratos
-    const fats = (calories * fatRatio) / 9; // 9 calorías por gramo de grasa
+    const protein = (calories * proteinRatio) / 4; 
+    const carbs = (calories * carbRatio) / 4; 
+    const fats = (calories * fatRatio) / 9; 
 
     return { protein, carbs, fats };
   };
@@ -50,9 +50,9 @@ const CalculateMacrosCalories = () => {
     let adjustedCalories = maintenanceCalories;
 
     if (goal === "loseWeight") {
-      adjustedCalories -= 500; // Restar 500 calorías para perder peso
+      adjustedCalories -= 500; 
     } else if (goal === "bulk") {
-      adjustedCalories += 500; // Sumar 500 calorías para la etapa de volumen
+      adjustedCalories += 500; 
     }
 
     const macros = calculateMacros(adjustedCalories);
