@@ -30,8 +30,8 @@ const Descripcion = () => {
         );
       })}
 
-      <Link to={'/suscripcion'}>
-        <Button intent='primary' size='large' roundness='round'>Registrate ahora</Button>
+      <Link to={'/registro_usuario'}>
+        <Button intent='primary' size='large' roundness='round'>REGISTRATE AHORA</Button>
       </Link>
     </div>
   );

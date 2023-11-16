@@ -1,6 +1,7 @@
 import React from "react";
 import CalculateMacrosCalories from "../components/CalculateMacrosCalories";
 import ConceptosConocer from "../components/ConceptosConocer";
+import Footer from "../components/Footer";
 
 
 const CalorieCalculator = () => {
@@ -9,6 +10,7 @@ const CalorieCalculator = () => {
     <div className=" ">
       <CalculateMacrosCalories/>
       <ConceptosConocer conceptCalories={'calculadora'}/>
+      <Footer/>
     </div>
   );
 };

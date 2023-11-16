@@ -28,9 +28,7 @@ const TmbAndForm = () => {
         </Link>
       </div>
       <div className="w-full flex flex-col gap-4 lg:w-[30rem] mt-5 lg:mt-0">
-        <h2 className="text-white text-2xl text-center font-semibold">
-          Rellena para una asesoría gratuita
-        </h2>
+        
         <Form />
       </div>
     </div>

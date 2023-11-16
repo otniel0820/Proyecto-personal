@@ -12,7 +12,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-center items-start gap-80 p-5 md:p-10 bg-[#646671]">
+    <div className="flex flex-col md:flex-row justify-center items-start gap-80 w-full bg-[#0f1219] border-y-4 border-solid border-red-500">
       <div className="flex flex-col text-white text-[1.5em] items-start">
         <Link to={"/"}>
           <Logo/>

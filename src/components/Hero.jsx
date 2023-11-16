@@ -21,7 +21,7 @@ const Hero = () => {
           </p>
           <Link to={'/suscripcion'}>
           <Button intent='primary' size='large' roundness='round'>
-            Suscribirte
+            SUSCRIBIRTE
           </Button>
           </Link>
           

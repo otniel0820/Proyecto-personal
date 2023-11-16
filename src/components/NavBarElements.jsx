@@ -46,12 +46,13 @@ export const Menu = styled.ul`
     left: ${({ click }) => (click ? "0" : "-100%")};
     flex-direction: column;
     transition: 0.5s all ease-in;
-    background-color: #0f1219;
+    background-color: rgb(28, 31, 39, 0.93);
+    
+    
   }
 `;
 export const MenuItem = styled.li`
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;

@@ -37,6 +37,9 @@ const Form = () => {
         onSubmit={onSubmit}
         className="p-4 md:p-10 bg-slate-100 bg-opacity-80 backdrop-blur-[5px] w-full md:w-[30rem] rounded-xl flex flex-col gap-5 shadow-lg shadow-[white]   max-w-screen-md mx-auto "
       >
+        <h2 className="text-black text-2xl text-center font-semibold">
+          Rellena para una asesoría gratuita
+        </h2>
         <Controller
           control={control}
           name="name"

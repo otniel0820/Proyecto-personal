@@ -39,7 +39,7 @@ const Volumen = () => {
             <div key={index} className="flex flex-col gap-5">
               {diasOrdenados.map(([dia, comida]) => (
                 <div key={dia} className="cursor-pointer" onClick={() => handleDayClick(dia, comida.id)}>
-                  <h2 className="text-blue-500 cursor-pointer text-xl">Comida para el dia: {comida.id}</h2>
+                  <h2 className="text-blue-500 cursor-pointer text-xl">Comida para el día: {comida.id}</h2>
                 </div>
               ))}
             </div>
