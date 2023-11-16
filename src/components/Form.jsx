@@ -38,7 +38,7 @@ const Form = () => {
         className="p-4 md:p-10 bg-slate-100 bg-opacity-80 backdrop-blur-[5px] w-full md:w-[30rem] rounded-xl flex flex-col gap-5 shadow-lg shadow-[white]   max-w-screen-md mx-auto "
       >
         <h2 className="text-black text-2xl text-center font-semibold">
-          Rellena para una asesoría gratuita
+          Obtén una asesoría gratuita
         </h2>
         <Controller
           control={control}
@@ -129,14 +129,14 @@ const Form = () => {
             field: { onChange, onBlur, value },
             fieldState: { error },
           }) => (
-            <InputNumber
+            <InputText
               id="number"
               value={value ?? ""}
               label="Telefono"
               onChange={onChange}
               onBlur={onBlur}
               error={error?.message}
-              containerClassName="sm:col-span-4"
+              containerClassName="sm:col-span-4 "
             />
           )}
         />
@@ -177,7 +177,7 @@ const Form = () => {
                     "Debe aceptar las politicas de privacidad y los Terminos y condiciones",
                 },
               })}
-              className="w-[1em] h-[1.25em] border-[#D1D5DB] accent-[#2A5B45]"
+              className="w-[1em] h-[1.25em] border-[#D1D5DB] accent-[#1c1f27]"
               onBlur={()=>trigger('politicas')}
             />
           <label

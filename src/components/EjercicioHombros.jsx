@@ -25,7 +25,7 @@ const EjercicioHombros = () => {
       <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold mb-4 text-center font-dafont">
         Ejercicios para Hombros
       </h1>
-      <section className="flex flex-col lg:flex-row gap-8 items-center">
+      <section className="flex flex-col lg:flex-row gap-20 items-center">
         {tiposEjerciciosHombros?.map((element, index) => (
           <div key={index} className="flex flex-col gap-5">
             {Object.entries(element).map(([indice, ejercicio]) => (
