@@ -18,6 +18,7 @@ const getData= async ()=>{
     arrNutricion.push(doc.data());
   });
 }
+getData()
 
 export const DataContextProvider = ({ children }) => {
   const [rutinas, setRutinas] = useState();
@@ -25,13 +26,14 @@ export const DataContextProvider = ({ children }) => {
 
   useEffect(() => {
     getData().then(data=>{
-
+      console.log(data);
       setNutricion(arrNutricion)
       setRutinas(arrRutinas)
     })
   }, []);
 
  console.log(nutricion)
+ console.log(rutinas)
   return (
     <>
       <DataContext.Provider value={{ rutinas, nutricion }}>
